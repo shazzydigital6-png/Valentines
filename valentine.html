@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 A Special Question for Ambreen 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    /* Question Page */
+    .question-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #fff5f7 0%, #ffe4ec 100%);
+      position: relative;
+    }
+
+    .decoration-heart {
+      position: absolute;
+      opacity: 0.15;
+      color: #ff6b8a;
+      pointer-events: none;
+      animation: drift 6s ease-in-out infinite;
+    }
+
+    .heart1 { font-size: 5rem; top: 10%; left: 5%; }
+    .heart2 { font-size: 4rem; top: 15%; right: 10%; animation-delay: -2s; }
+    .heart3 { font-size: 4.5rem; bottom: 25%; left: 8%; animation-delay: -4s; }
+    .heart4 { font-size: 3.5rem; bottom: 15%; right: 8%; animation-delay: -1s; }
+    .heart5 { font-size: 6rem; top: 30%; right: 20%; animation-delay: -3s; }
+
+    @keyframes drift {
+      0%, 100% { transform: translateX(0) translateY(0); }
+      25% { transform: translateX(10px) translateY(-10px); }
+      50% { transform: translateX(0) translateY(-5px); }
+      75% { transform: translateX(-10px) translateY(-10px); }
+    }
+
+    .main-heart {
+      font-size: 6rem;
+      margin-bottom: 1.5rem;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.15); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.1); }
+    }
+
+    .title {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #ff6b8a;
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: float 4s ease-in-out infinite;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      padding: 0 1rem;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-15px) rotate(2deg); }
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      position: relative;
+    }
+
+    .yes-btn {
+      background: linear-gradient(135deg, #ff6b8a 0%, #ff8fab 100%);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 1rem 3rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(255, 107, 138, 0.4);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .yes-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(255, 107, 138, 0.5);
+    }
+
+    .no-btn {
+      background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+      color: #666;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease-out;
+    }
+
+    .hint-text {
+      margin-top: 2rem;
+      color: #ff8fab;
+      font-size: 1.1rem;
+      animation: pulse 2s ease-in-out infinite;
+      display: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Celebration Page */
+    .celebration-page {
+      min-height: 100vh;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fff0f3 0%, #ffd6e0 50%, #ffb3c6 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .floating-heart {
+      position: absolute;
+      bottom: 0;
+      animation: floatUp linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    }
+
+    .celebration-content {
+      text-align: center;
+      z-index: 10;
+    }
+
+    .big-heart {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards, pulse-heart 1s ease-in-out infinite 0.8s;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes pulse-heart {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .yay-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.5rem;
+      color: #ff6b8a;
+      margin-bottom: 1.5rem;
+      animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .happy-text {
+      font-size: 1.5rem;
+      color: #ff8fab;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+
+    .gif-container {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+      border: 4px solid #ffb3c6;
+      max-width: 350px;
+      animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+      animation-delay: 0.6s;
+      opacity: 0;
+    }
+
+    .gif-container img {
+      width: 100%;
+      display: block;
+    }
+
+    .final-text {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: #ff8fab;
+      animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+      animation-delay: 0.8s;
+      opacity: 0;
+    }
+
+    .music-note {
+      font-size: 1rem;
+      color: #ff8fab;
+      margin-bottom: 1rem;
+      animation: pulse 2s ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 2rem;
+      }
+      .main-heart {
+        font-size: 4rem;
+      }
+      .yay-text {
+        font-size: 2.5rem;
+      }
+      .happy-text {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Question Page -->
+  <div class="question-page" id="questionPage">
+    <div class="decoration-heart heart1">❤️</div>
+    <div class="decoration-heart heart2">💕</div>
+    <div class="decoration-heart heart3">💗</div>
+    <div class="decoration-heart heart4">💖</div>
+    <div class="decoration-heart heart5">💝</div>
+
+    <div class="main-heart">💖</div>
+    <h1 class="title">Will you be my Valentine?</h1>
+
+    <div class="buttons">
+      <button class="yes-btn" onclick="sayYes()">Yes! 💕</button>
+      <button class="no-btn" id="noBtn" onmouseenter="moveNoButton()" ontouchstart="moveNoButton()" onclick="moveNoButton()">No</button>
+    </div>
+
+    <p class="hint-text" id="hintText">Come on, just say yes! 😊</p>
+  </div>
+
+  <!-- Celebration Page -->
+  <div class="celebration-page" id="celebrationPage">
+    <!-- Hidden YouTube player for music -->
+    <iframe 
+      id="musicPlayer"
+      width="0" 
+      height="0" 
+      src="" 
+      allow="autoplay; encrypted-media" 
+      style="position: absolute; visibility: hidden;"
+    ></iframe>
+    
+    <div class="celebration-content">
+      <div class="music-note">🎵 Now Playing 🎵</div>
+      <div class="big-heart">💖</div>
+      <h1 class="yay-text">Yay!!!</h1>
+      <p class="happy-text">Ambreen, you made me the happiest person! 💕</p>
+      <div class="gif-container">
+        <img src="https://media.giphy.com/media/xT0GqFhyNd0Wmfo6sM/giphy.gif" alt="Love gif">
+      </div>
+      <p class="final-text">Can't wait to spend Valentine's Day with you! 🌹</p>
+    </div>
+  </div>
+
+  <script>
+    const noMessages = [
+      "No",
+      "Are you sure?",
+      "Really sure?",
+      "Think again!",
+      "Please? 🥺",
+      "Pretty please?",
+      "With sugar on top?",
+      "I'll be sad...",
+      "Don't do this!",
+      "You're breaking my heart!"
+    ];
+
+    let noCount = 0;
+    const noBtn = document.getElementById('noBtn');
+    const hintText = document.getElementById('hintText');
+
+    function moveNoButton() {
+      const maxX = 150;
+      const maxY = 100;
+      const newX = (Math.random() - 0.5) * maxX * 2;
+      const newY = (Math.random() - 0.5) * maxY * 2;
+
+      noBtn.style.transform = `translate(${newX}px, ${newY}px)`;
+      
+      noCount = Math.min(noCount + 1, noMessages.length - 1);
+      noBtn.textContent = noMessages[noCount];
+
+      if (noCount > 2) {
+        hintText.style.display = 'block';
+      }
+    }
+
+    function sayYes() {
+      document.getElementById('questionPage').style.display = 'none';
+      document.getElementById('celebrationPage').style.display = 'flex';
+      
+      // Start the music
+      document.getElementById('musicPlayer').src = 'https://www.youtube.com/embed/-BjZmE2gtdo?autoplay=1&loop=1&playlist=-BjZmE2gtdo';
+      
+      startHearts();
+    }
+
+    function startHearts() {
+      setInterval(() => {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.textContent = '❤️';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.fontSize = (20 + Math.random() * 30) + 'px';
+        heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+        document.getElementById('celebrationPage').appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
+      }, 200);
+    }
+  </script>
+</body>
+</html>
